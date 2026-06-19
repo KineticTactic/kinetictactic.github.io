@@ -14,7 +14,7 @@
 
 	<div class="copyright">© {new Date().getFullYear()} Rudrajeet Pal</div>
 	<div class="built">
-		Built with love and SvelteKit. <a href="https://github.com/KineticTactic/KineticTactic.github.io">view source</a
+		Built with love and SvelteKit. <a href="https://github.com/KineticTactic/kinetictactic.github.io">view source</a
 		>
 	</div>
 </footer>
