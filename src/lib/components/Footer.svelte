@@ -34,7 +34,7 @@
 	}
 
 	.threadlocked, .threadlocked span {
-		font-family: 'Instrument Serif';
+		font-family: var(--serif), serif;
 		font-size: 1.2rem;
 	}
 

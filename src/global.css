@@ -1,16 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Instrument+Serif:ital@0;1&family=Jersey+10&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Instrument+Serif:ital@0;1&family=Jersey+10&display=swap'); */
 
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-	font-family: 'DM Sans', sans-serif;
+@font-face {
+	font-family: "LibreCaslonCondensed";
+	src: url("/LibreCaslonCondensed-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Jersey 10";
+	src: url("/Jersey10-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Komet";
+	src: url("/komet-light.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
 }
 
 :root {
 	--bg: #171210;
 	--text: #999889;
 	--text-highlight: #ffffd3;
+
+	--serif: "LibreCaslonCondensed";
+	--pixel: "Jersey 10";
+	--sans: "Komet";
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	font-family: var(--sans), sans-serif;
 }
 
 html,
@@ -26,7 +51,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Instrument Serif", serif;
+	font-family: var(--serif), serif;
 	color: var(--text-highlight);
 	font-weight: 200;
 }

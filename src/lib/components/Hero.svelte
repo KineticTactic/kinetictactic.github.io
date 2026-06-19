@@ -20,7 +20,7 @@
 	}
 
 	.tag {
-		font-family: 'Jersey 10', sans-serif;
+		font-family: var(--pixel), sans-serif;
 		font-size: 2.69rem;
 		font-weight: 400;
 		color: var(--text);
@@ -46,7 +46,7 @@
 	ul li a {
 		text-decoration-line: none;
 		color: var(--text-highlight);
-		font-family: 'Instrument Serif', serif;
+		font-family: var(--serif), serif;
 		font-size: 1.6rem;
 		font-weight: 200;
 	}

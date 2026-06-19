@@ -62,7 +62,7 @@
 	}
 
 	.name {
-		font-family: 'Instrument Serif', serif;
+		font-family: var(--serif), serif;
 		font-size: 1.5rem;
 		color: var(--text-highlight);
 		text-align: right;
@@ -80,7 +80,7 @@
 	}
 
 	.tech {
-		font-family: 'Jersey 10', sans-serif;
+		font-family: var(--pixel), sans-serif;
 		font-size: 1.4rem;
 		display: inline;
 		margin-right: 1rem;
