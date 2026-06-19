@@ -3,7 +3,7 @@
 
 	const projects = [
 		{
-			name: 'Reflecta',
+			name: 'reflecta',
 			description:
 				'A real-time 2D optics sandbox for experimenting with light rays, mirrors, and lenses.',
 			library: {
