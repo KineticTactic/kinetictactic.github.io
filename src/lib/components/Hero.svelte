@@ -6,7 +6,7 @@
 
 	<ul>
 		<li><a href="#projects">Projects</a></li>
-		<li><a href="https://drive.google.com/file/d/1aZOtfCJcKh_5reEW0q5d9ZriBec8o22z/view?usp=sharing">Resume</a></li>
+		<li><a href="/Rudrajeet_Pal_Resume.pdf">Resume</a></li>
 		<li><a href="/">Blog</a></li>
 		<li><a href="https://github.com/KineticTactic">GitHub</a></li>
 	</ul>
