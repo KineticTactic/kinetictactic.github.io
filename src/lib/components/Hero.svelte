@@ -1,5 +1,6 @@
 <section id="hero">
-	<h1>Rudrajeet Pal</h1> <span class="tag">@kinetictactic</span>
+	<h1>Rudrajeet Pal</h1>
+	<span class="tag">@kinetictactic</span>
 	<div class="tagline">
 		Full-Stack Engineer focused on web platforms, real-time rendering, and developer tooling.
 	</div>
@@ -7,7 +8,7 @@
 	<ul>
 		<li><a href="#projects">Projects</a></li>
 		<li><a href="/Rudrajeet_Pal_Resume.pdf">Resume</a></li>
-		<li><a href="/">Blog</a></li>
+		<li><a href="/blog">Blog</a></li>
 		<li><a href="https://github.com/KineticTactic">GitHub</a></li>
 	</ul>
 </section>
