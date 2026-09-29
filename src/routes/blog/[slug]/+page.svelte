@@ -64,6 +64,7 @@
 		border-radius: 10px;
 		padding: 0.7rem 1.5rem;
 	}
+	article :global(code),
 	article :global(pre code),
 	article :global(pre code span) {
 		font-family: 'Inconsolata', serif !important;

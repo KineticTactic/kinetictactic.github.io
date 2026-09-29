@@ -8,6 +8,23 @@ tags:
 
 # Initialization in C++
 
+So you think you know how to initialize objects in C++, right? Well, do you? *vsauce music plays*
+
+Well let's take at some of the ways you can initialize an object in C++.
+
+```cpp
+T x;        // Default initialization
+T x{};      // Value initialization
+T x = T{};  // Copy initialization 
+T x{a, b, c};// Direct-List initialization
+T x = {a, b, c}; // Copy-List initialization
+// and many more
+```
+
+It's clear that in C++ there are a gazillion different types of initialization, with overlapping and confusing terminologies. Let's go through each of them. Keep in mind that these aren't separate, and that one type of initialization can perform another type of initialization as a part of it's process.
+
+---
+
 ## Aggregate Initialization
 
 So what is an aggregate type?
@@ -87,6 +104,8 @@ What happens in aggregate initialization?
   
   this results in *value initialization* of a.y.
 
+--- 
+
 ## Value initialization
 
 Value initialization occurs in the following cases:
@@ -99,6 +118,8 @@ new T{}
 T a{};
 ```
 
+> Note that `T a();` is not initializing a variable, it's instead parsed as a function declaration. This is known as [Most vexing parse](https://en.wikipedia.org/wiki/Most_vexing_parse).
+
 What happens in value initialization?
 
 - If T is an **aggregate**, it is *aggregate initialized*.
@@ -106,7 +127,7 @@ What happens in value initialization?
   1. if default initialization selects a constructor, and if the constructor is NOT **user-provided**, it is FIRST *zero initialized*.
   2. it is  then *default initialized*.
 - If T is an **array type**, each element is *value initialized*.
-- Otherwise, it is *zero initialized*.
+- Otherwise, it is *zero initialized*. (**This means `int x{};` would create a variable `x` with a determinate value of `0`**).
 
 Note that when you write any of the following
 
@@ -117,9 +138,9 @@ T a = T();
 T a = T{};
 ```
 
-There are two types of initialization here. First, the RHS creates an temporary which is *value initialized* (or *aggregate initialized* if T is an aggregate). Then `a` is *copy initialized* from this temporary.
+There are two types of initialization here. First, the RHS creates a temporary which is *value initialized* (or *aggregate initialized* if T is an aggregate). Then `a` is *copy initialized* from this temporary.
 
-It does not necessarily mean there is a copy. In modern C++ (C++17+), when the types match, the object can be initialized directly without a copy/move construction
+It does not necessarily mean there is a copy. In modern C++ (C++17+), when the types match, the object can be initialized directly without a copy/move construction.
 
 ## Default initialization
 
@@ -134,7 +155,7 @@ What happens in defaut initialization?
 
 - If T is a **class type**, *default constructor* (either implicit or user-defined) is called.
 - If T is an **array type**, every element is *default initialized*.
-- Otherwise, *no initialization is perfomed*.
+- Otherwise, *no initialization is perfomed*. (**This means `int x{};` would create a variable `x` with an indeterminate value!**)
 
 Note that when you write the following
 
@@ -159,6 +180,8 @@ What happens in zero initialization?
   2. first non-static named data member is *zero initialized*.
 - If T is an **array type**, elements are *zero initialized*.
 - If T is a reference, nothing is done.
+
+--- 
 
 ## List initialization
 
@@ -193,7 +216,7 @@ T foo() {
 }
 ```
 
-If T is an aggregate, list initialization converts (or boils down to) *aggregate-initialization*.  For example,
+If T is an aggregate, list initialization boils down to *aggregate-initialization*.  For example,
 
 ```cpp
 struct Point {
@@ -224,6 +247,8 @@ int x{3.14};   // NOT allowed
 ```
 
 If no matching constructors are found, it results in a *compiler error*.
+
+---
 
 Some other terms,
 
@@ -257,9 +282,7 @@ A a(10);       // direct-initialization
 A b = 10;      // copy-initialization
 ```
 
-
 ---
-
 
 ## Now let's deal with constructors.
 
@@ -364,6 +387,8 @@ std::cout << a.x << " " << b.x;
 
 here `a.x` is ZERO since it is value-initialized, but `b.x` is **indeterminate** since it is default-initialized.
 
+---
+
 ## Examples
 
 ```cpp
@@ -416,8 +441,6 @@ A a;
 
 `ref` is a reference data member that is not mentioned in the mem-initializer list and has no default member initializer. Therefore the constructor cannot initialize it. A reference member must be bound to an object during initialization, so the constructor is ill-formed (in practice, the implicitly/defaulted initialization requirements cause the constructor to be deleted or the declaration to be diagnosed).
 
----
-
 ## Further reading
 
 - cppreference:
@@ -432,3 +455,9 @@ A a;
   9. [Constructors and member initializer lists](https://en.cppreference.com/cpp/language/constructor)
 - [Sy Brand - Initialization in C++ is Bonkers](https://tartanllama.xyz/posts/cpp-initialization-is-bonkers/)
 - [Mike Lui - Initialization in C++ is Seriously Bonkers](https://mikelui.io/2019/01/03/seriously-bonkers.html)
+- learncpp
+  1. [Narrowing conversions, list initialization, and constexpr initializers](https://www.learncpp.com/cpp-tutorial/narrowing-conversions-list-initialization-and-constexpr-initializers/)
+  2. [Struct aggregate initialization](https://www.learncpp.com/cpp-tutorial/struct-aggregate-initialization/)
+  3. [Default member initialization](https://www.learncpp.com/cpp-tutorial/default-member-initialization/)
+  4. [Constructor member initializer lists](https://www.learncpp.com/cpp-tutorial/constructor-member-initializer-lists/)
+  5. [`std::initializer` list](https://www.learncpp.com/cpp-tutorial/stdinitializer_list/)
