@@ -127,4 +127,8 @@
 		border-radius: 50%;
 		background: #c98a52;
 	}
+
+	article :global(img) {
+		width: 100%;
+	}
 </style>
