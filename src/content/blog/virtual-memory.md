@@ -1,7 +1,7 @@
 ---
 title: "Virtual Memory"
 description: "notes i made while studying about virtual memory, memory-mapping and mmap"
-date: "2026-09-27"
+date: "2026-09-22"
 tags:
   - systems
 ---
